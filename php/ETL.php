@@ -43,7 +43,7 @@ function fetchAndSaveYearlyWeatherData($pdo) {
 }
 
 function fetchSunriseData($date) {
-    $url = "https://api.sunrise-sunset.org/json?lat=47.3748546428267&lng=8.538792451112515&date=" . $date;
+    $url = "https://api.sunrise-sunset.org/json?lat=47.3786&lng=8.5400&date=2024-05-22&tzid=europe/zurich&date=" . $date;
 
     // Initialize a cURL session
     $ch = curl_init($url);

@@ -1,7 +1,7 @@
 <?php
 
 function fetchWeatherData() {
-    $url = "https://api.sunrise-sunset.org/json?lat=47.3748546428267&lng=8.538792451112515&date=today";
+    $url = "https://api.sunrise-sunset.org/json?lat=47.3786&lng=8.5400&tzid=europe/zurich&date=today";
 
     // Initialisiert eine cURL-Sitzung
     $ch = curl_init($url);
