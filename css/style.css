@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #FAEEDD;
+    color: #000000;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+header h1 {
+    font-size: 32px;
+    color: black;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+#chartContainer {
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 30px
+}
+
+.time-button {
+    background-color: #F2D5B3;
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.minutes {
+    display: block;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.unit {
+    display: block;
+    font-size: 12px;
+    line-height: 1;
+    margin-top: -18px;
+}
+
+.time-button:hover, .time-button:active, .time-button:focus {
+    background-color: #F2B05C;
+    outline: none;
+}
+
+.info {
+    background-color: #FAEEDD;
+    padding: 20px 0;
+    width: 100%
+}
+
+.today h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: normal;
+    }
+
+    .heute {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .heute::after {
+        content: '';
+        position: absolute;
+        right: 120px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid black;
+    }
+
+.today .time {
+    margin-top: 10px;
+    }
+
+    .los-um {
+        font-size: 12px;
+        margin: 4px 0;    /* Geringer Abstand zwischen den Zeilen */
+    }
+    
+    .time {
+        font-size: 20px;
+    }
+
+#graphicContainer {
+    display: flex;           
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;             
+}
+
+.Text {
+    background-color: #52688A;
+    color: white;
+    padding: 20px 0;
+    margin-top: auto;
+    margin-bottom: 0;
+    position: relative;
+    top: -164px;
+    width: 100%;
+}
+
+.Text h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.Text p {
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: normal;
+    padding: 20px;
+    }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+
+    .time-button {
+        flex: 1;
+    }
+}
+
