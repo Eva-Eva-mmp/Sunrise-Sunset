@@ -10,150 +10,38 @@ body {
     color: #000000;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 0;
-    height: 100vh;
-    box-sizing: border-box;
-}
 
-header h1 {
-    font-size: 32px;
-    color: black;
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 30px;
-    font-weight: normal;
-}
-
-#chartContainer {
-    display: flex;
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    margin-left: 30px;
-    margin-right: 30px
-}
-
-.time-button {
-    background-color: #F2D5B3;
-    color: black;
-    border: none;
-    padding: 12px 24px;
-    font-size: 18px;
-    border-radius: 30px;
-    margin-right: 10px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.minutes {
-    display: block;
-    font-size: 24px;
-    line-height: 1;
-}
-
-.unit {
-    display: block;
-    font-size: 12px;
-    line-height: 1;
-    margin-top: -18px;
-}
-
-.time-button:hover, .time-button:active, .time-button:focus {
-    background-color: #F2B05C;
-    outline: none;
-}
-
-.info {
-    background-color: #FAEEDD;
-    padding: 20px 0;
-    width: 100%
-}
-
-.today {
-    
-}
-
-.today h2 {
+h2 {
     font-size: 40px;
     margin-bottom: 10px;
     text-align: center;
     font-weight: normal;
     }
 
-    .heute {
-        position: relative;
-        cursor: pointer;
-    }
-
-    .heute::after {
-        content: '';
-        position: absolute;
-        right: 120px;
-        top: 50%;
-        transform: translateY(-50%);
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 10px solid black;
-    }
-
-.today .time {
+h3 {
+    font-size: 24px;
     margin-top: 10px;
-    }
-
-    .los-um {
-        font-size: 12px;
-        margin: 4px 0;    /* Geringer Abstand zwischen den Zeilen */
+    text-align: center;
+    font-weight: normal;
     }
     
-    .time {
-        font-size: 20px;
-    }
 
-#graphicContainer {
+.los-um {
+    font-size: 12px;
+     margin: 4px 0;    /* Geringer Abstand zwischen den Zeilen */
+    }
+    
+
+#grafik {
     display: flex;           
     justify-content: center;
     align-items: flex-start;
     width: 100%;             
 }
 
-.Text {
-    background-color: #52688A;
-    color: white;
-    padding: 20px 0;
-    margin-top: auto;
-    margin-bottom: 0;
-    position: relative;
-    top: -164px;
-    width: 100%;
-}
+_____
 
-.Text h3 {
-    font-size: 24px;
-    margin-top: 10px;
-    text-align: center;
-    font-weight: normal;
-}
-
-.Text p {
-    font-size: 16px;
-    line-height: 1.5;
-    text-align: center;
-    font-weight: normal;
-    padding: 20px;
-    }
-
-
-.inhalt {
+div.inhalt {
     max-width: 768px;
     margin: auto;
     padding: 0px 20px 0px 20px;
@@ -171,6 +59,7 @@ h1 {
     margin-bottom: 30px;
     font-weight: normal;
  }
+
 
 .textbox-container {
     width: 100%;
@@ -204,29 +93,14 @@ h1 {
     padding: 20px;
 }
 
-.datum {
-    position: relative;
-    cursor: pointer;
-}
-
-.datum::after {
-    content: '';
-    position: relative;
-    right: 120px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid black;
-}
-
 .datumanzeige {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px 0px;
 }
 
-.heute {
+.datum {
     color: black; /* Textfarbe */
     margin-right: 10px; /* Abstand zwischen den Elementen */
 }
@@ -239,6 +113,55 @@ h1 {
     border-top: 10px solid black;
 }
 
+
+.button-container {
+    display: flex;
+    margin: auto;
+    max-width: 500px;
+    min-width: auto; /* Passt die Breite an deine Bedürfnisse an */
+    border-radius: 20px; /* Abrundung der Ecken */
+    overflow: hidden; /* Verhindert, dass Inhalte außerhalb des Containers angezeigt werden */
+  }
+  
+  .button-section {
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px 20px;
+    background-color: #F2D5B3; /* Helle Hintergrundfarbe */
+    transition: background-color 0.3s;
+    font-family: Arial, sans-serif; /* Schriftart */
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+  }
+
+  .time {
+    font-size: 24px;
+    line-height: 1;
+ }
+  
+  .button-section.middle {
+    border-left: #F2B05C 1px solid;
+    border-right: #F2B05C 1px solid;
+  }
+  
+  .button-section:hover {
+    background-color: #F2B05C; /* Dunklere Hintergrundfarbe beim Hover */
+    box-shadow: inset 0 0 10px rgba(191, 122, 63, 0.3); 
+    cursor: pointer;
+  }
+
+  .button-section:focus .button-section:active {
+    background-color: #F2B05C; /* Dunklere Hintergrundfarbe beim Hover */
+    box-shadow: inset 0 0 10px rgba(191, 122, 63, 0.3); 
+    cursor: pointer;
+  }
+
+  .button-section:focus {
+    background-color: #F2B05C; /* Dunklere Hintergrundfarbe beim Hover */
+    cursor: pointer;
+  }
+
 @media (max-width: 768px) {
     .container {
         padding: 0;
@@ -247,5 +170,12 @@ h1 {
     .time-button {
         flex: 1;
     }
+
 }
 
+@media (max-width: 539px) {
+    .button-container {
+        margin: 0px 20px 0px 20px;
+}
+   
+}
