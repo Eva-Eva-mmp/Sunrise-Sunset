@@ -30,7 +30,7 @@ header h1 {
 }
 
 #chartContainer {
-    display: none;
+    display: flex;
 }
 
 .buttons {
@@ -77,6 +77,10 @@ header h1 {
     background-color: #FAEEDD;
     padding: 20px 0;
     width: 100%
+}
+
+.today {
+    
 }
 
 .today h2 {
@@ -141,7 +145,7 @@ header h1 {
 }
 
 .Text p {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.5;
     text-align: center;
     font-weight: normal;
