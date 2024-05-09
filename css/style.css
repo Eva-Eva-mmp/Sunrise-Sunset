@@ -162,7 +162,90 @@ h1 {
     cursor: pointer;
   }
 
-  .jahresansicht {
+
+.calendar {
+    width: calc(100% - 60px);
+    max-width: 600px; /* Anpassen nach Bedarf */
+    margin: 0 30px;
+    background-color: #F2D5B3;
+    border-radius: 8px;
+    padding: 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #F2D5B3;
+    background-color: #F2B05C;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.arrow {
+    cursor: pointer;
+    user-select: none;
+    color: black;
+}
+
+.calendar-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.weekdays {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.weekdays div {
+    font-size: 16px;
+    font-weight: bold;
+    width: 14.28%; /* Gleichmäßige Aufteilung der Tage */
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.days div {
+    width: 14.28%;
+    padding: 10px 0;
+    margin-bottom: 5px;
+    background-color: #F2D5B3;
+    cursor: pointer;
+    color: black;
+    transition: background-color 0.3s, border-radius 0.3s;
+}
+
+.days div:hover {
+    background-color: #F2B05C;
+    color: black;
+    border-radius: 50%;
+}
+
+.day, .prev-date, .next-date {
+    transition: background-color 0.3s;
+}
+
+.prev-date, .next-date {
+    color: rgb(64, 59, 59); /* Graue Farbe für Tage außerhalb des Monats */
+}
+
+.day[onclick] {
+    font-weight: bold; /* Hebt Tage hervor, die ausgewählt werden können */
+}
+
+
+
+.jahresansicht {
     font-size: 32px;
     color: black;
     text-align: center;
