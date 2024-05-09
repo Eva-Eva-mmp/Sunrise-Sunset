@@ -162,6 +162,55 @@ h1 {
     cursor: pointer;
   }
 
+  .jahresansicht {
+    font-size: 32px;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.legende {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.legende-item {
+    display: inline-block;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 40px; /* Abstand zwischen den Legende-Elementen */
+    text-align: left;
+}
+
+.legende span {
+    font-size: 12px;
+    color: black;
+    display: block;
+}
+
+.legende-balken {
+    width: 30px;
+    height: 5px;
+    margin-top: 4px; /* Abstand von Text zu Balken */
+}
+
+.sonnenaufgang {
+    background-color: #F2B05C;
+}
+
+.sonnenuntergang {
+    background-color: #52688A;
+}
+
+.grafik-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0;
