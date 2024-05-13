@@ -159,6 +159,12 @@ h1 {
     cursor: pointer;
   }
 
+  .button-section.active {
+    background-color: #F2B05C; /* Dunklere Hintergrundfarbe beim Hover */
+    box-shadow: inset 0 0 10px rgba(191, 122, 63, 0.3); 
+    cursor: pointer;
+  }
+
   .button-section:focus {
     background-color: #F2B05C; /* Dunklere Hintergrundfarbe beim Hover */
     cursor: pointer;
@@ -296,14 +302,9 @@ ______________
     align-items: center;
 }
 
-____
+
 
 /* Popup*/
-
-
-
-
-
 
 
 @media (max-width: 768px) {
@@ -314,16 +315,10 @@ ____
     .time-button {
         flex: 1;
     }
-
-
-
 }
 
 @media (max-width: 539px) {
     .button-container {
-        margin: 0px 20px 0px 20px;
-}
-
-
-   
+        margin: 0 20px;
+    }
 }
