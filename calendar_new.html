@@ -4,13 +4,20 @@
   <head>
     <meta charset="utf-8">
     <title>Dynamic Calendar JavaScript | CodingNepal</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-new.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Font Link for Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <script src="script.js" defer></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
+
+    <div class="frage">   
+      <h1> Wann möchtest du Laufen gehen?</h1> 
+</div>
+
+<div class="seiteninhalt">
     <div class="wrapper">
       <header>
         <p class="current-date"></p>
@@ -21,17 +28,27 @@
       </header>
       <div class="calendar">
         <ul class="weeks">
-          <li>Sun</li>
-          <li>Mon</li>
-          <li>Tue</li>
-          <li>Wed</li>
-          <li>Thu</li>
-          <li>Fri</li>
-          <li>Sat</li>
+          <li>So</li>
+          <li>Mo</li>
+          <li>Di</li>
+          <li>Mi</li>
+          <li>Do</li>
+          <li>Fr</li>
+          <li>Sa</li>
         </ul>
         <ul class="days"></ul>
       </div>
     </div>
-    
+
+<div class="jahresverlauf">
+    <h2 class="jahresansicht">Jahresverlauf</h2>
+
+    <div id="chartContainer">
+      <canvas id="linienDiagramm"></canvas>
+    </div>
+
+</div>
+    <script src="js/script.js" defer></script>
+</div>  
   </body>
 </html>

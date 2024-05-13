@@ -24,20 +24,54 @@
  </div>
 
 
-    <div class="info">
+ <div class="info">
        
-        <div class="datumanzeige">
-            <div class="datum"> <h2>Heute</h2></div>
-            <div class="pfeil"></div>
-        </div>
-
-            <div class="times">
-            <p class="los-um">Los um: <span class="time" id="sunrise">Daten werden geladen...</span></p>
-             <p class="los-um">Los um: <span class="time" id="sunset">Daten werden geladen...</span></p>
-            </div>
-         </div>
+    <div class="datumanzeige">
+        <div class="datum"> <h2>Heute</h2></div>
+        <div class="pfeil"></div>
     </div>
 
+        <div class="times">
+        <p class="los-um">Los um: <span class="time" id="sunrise">Daten werden geladen...</span></p>
+         <p class="los-um">Los um: <span class="time" id="sunset">Daten werden geladen...</span></p>
+        </div>
+     </div>
+</div>
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById("modal");
+    var openPopup = document.getElementById("openPopup");
+    var openPopupArrow = document.getElementById("openPopupArrow");
+    var closeButton = document.getElementsByClassName("close-button")[0];
+
+    // Öffnen des Modals
+    openPopup.onclick = function() {
+        modal.style.display = "block";
+    }
+    openPopupArrow.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // Schließen des Modals
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Schließen des Modals beim Klicken außerhalb des Modal-Inhalts
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+
+    </script>
+    
+    
 
 <div id="grafik">
         <svg width="338" height="328" viewBox="0 0 338 328" fill="none" xmlns="http://www.w3.org/2000/svg">

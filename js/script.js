@@ -31,21 +31,69 @@ const linienDiagramm = document.querySelector('#linienDiagramm');
 new Chart(linienDiagramm, {
   type: 'line',
   data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
-    }]
+    labels: ['Jan.', 'Febr.', 'März', 'Apr.', 'Mai', 'Juni', 'Juli', 'Aug.', 'Sept.', 'Okt.', 'Nov.', 'Dez.'],  
+    datasets: [
+    {
+      label: 'Sonnenaufgang',
+      data: [12, 19, 3, 5, 2, 3, 24],
+      borderWidth: 1,
+      borderColor: 'rgba(242, 175, 94, 1)',
+      backgroundColor: 'rgba(242, 175, 94, 1)',
+      pointRadius: 0, // Orange
+    },
+    {
+      label: 'Sonnenuntergang',
+      data: [7, 11, 5, 8, 3, 7],
+      borderWidth: 1,
+      backgroundColor: 'rgba(82, 104, 138, 100)',
+      borderColor: 'rgba(82, 104, 138, 100)',
+      pointRadius: 0, // Blau
+    }
+  ]
   },
   options: {
+    responsive: true,  // Macht das Diagramm responsiv
+    maintainAspectRatio: true,  // Beibehaltung des Aspektverhältnisses
     scales: {
       y: {
-        beginAtZero: true
+        beginAtZero: false,
+        ticks: {
+          color: 'black',
+          // Erstellen von benutzerdefinierten Ticks, die jede Stunde von 01:00 bis 00:00 darstellen
+          callback: function(value, index, values) {
+            // Generiert Uhrzeiten von 01:00 bis 24:00, wobei 24:00 als 00:00 dargestellt wird
+            const hour = (index + 1) % 24;
+            return `${hour === 0 ? '00' : hour.toString().padStart(2, '0')}:00`;
+          },
+          stepSize: 1,  // Jeder Tick entspricht einer Stunde
+          min: 1,       // Beginnend bei 01:00
+          max: 24       // Endend bei 00:00
+        }
+      },
+
+      x: {
+        ticks: {
+          color: 'black' // Setzt die Textfarbe der X-Achse auf Schwarz
+        }
+      }
+    },
+    
+    plugins: {
+      legend: {
+        display: true,
+        position: 'bottom',
+        align: 'start',
+        labels: {
+          color: 'black',  // Setzt die Textfarbe der Legende auf Schwarz
+          boxWidth: 20,
+          padding: 20,
+        }
       }
     }
   }
-})
+});
+  
+
 
 
 //kalender neu
@@ -60,8 +108,8 @@ currYear = date.getFullYear(),
 currMonth = date.getMonth();
 
 // storing full name of all months in array
-const months = ["January", "February", "March", "April", "May", "June", "July",
-              "August", "September", "October", "November", "December"];
+const months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli",
+              "August", "September", "Oktober", "November", "Dezember"];
 
 const renderCalendar = () => {
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
@@ -105,3 +153,6 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
         renderCalendar(); // calling renderCalendar function
     });
 });
+
+
+
