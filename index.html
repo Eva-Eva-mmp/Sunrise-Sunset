@@ -14,7 +14,7 @@
     <h1> Wie lange möchtest du Laufen gehen?</h1>
 
  <div class="button-container">
-        <div class="button-section" tabindex="0">
+        <div class="button-section active" tabindex="0">
             <span class="time">30</span><br> Min
         </div>
         <div class="button-section middle" tabindex="0">
@@ -27,13 +27,13 @@
  <div class="info">
        
     <div class="datumanzeige">
-        <div class="datum"> <h2>Heute</h2></div>
+        <div class="datum"> <h2 id="datumsanzeige">Heute</h2></div>
         <div class="pfeil"></div>
     </div>
 
         <div class="times">
-        <p class="los-um">Los um: <span class="time" id="sunrise">Daten werden geladen...</span></p>
-         <p class="los-um">Los um: <span class="time" id="sunset">Daten werden geladen...</span></p>
+        <p class="los-um">Los um: <br> <span class="time" id="sunrise">Daten werden geladen...</span></p>
+         <p class="los-um">Los um: <br> <span class="time" id="sunset">Daten werden geladen...</span></p>
         </div>
      </div>
 </div>
@@ -79,9 +79,95 @@
     </div>
 </div>
    
+<div id="popup-overlay"></div>
+<div id="popup">
+    <div class="close-btn">&times;</div>
+    <div class="frage">
+       <h1> Wann möchtest du Laufen gehen?</h1>
+    </div>
+    <div class="seiteninhalt">
+       <p class="date-picked"><span id="picked"></span></p>
+       <main class="calendermain">
+          <div id="calender-header">
+             <button onclick="prevMonth()">&lt;</button>
+             <h3 id="month"></h3>
+             <button onclick="nextMonth()">&gt;</button>
+          </div>
+          <table>
+             <thead>
+                <tr>
+                   <th>So</th>
+                   <th>Mo</th>
+                   <th>Di</th>
+                   <th>Mi</th>
+                   <th>Do</th>
+                   <th>Fr</th>
+                   <th>Sa</th>
+                </tr>
+             </thead>
+             <tbody id="calendar">
+             </tbody>
+          </table>
+       </main>
 
+       <div class="jahresverlauf">
+          <h2 class="jahresansicht">Jahresverlauf</h2>
+          <div id="chartContainer">
+             <canvas id="linienDiagramm"></canvas>
+          </div>
+       </div>
+
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auswahl der Elemente, die das Popup triggern
+            const datumElements = document.querySelectorAll('.datum, .pfeil');
+        
+            // Popup-Element
+            const popup = document.getElementById('popup');
+        
+            // Funktion, um das Popup zu zeigen
+            function showPopup() {
+                popup.classList.add('show');
+            }
+        
+            // Event Listener hinzufügen
+            datumElements.forEach(element => {
+                element.addEventListener('click', showPopup);
+            });
+        });
+
+
+    const datumElements = document.querySelectorAll('.datum, .pfeil');
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('popup-overlay');
+    const closeButton = document.querySelector('.close-btn');
+
+    function showPopup() {
+        overlay.style.display = 'block'; // Zeigt das Overlay
+        popup.classList.add('show');
+    }
+
+    function closePopup() {
+        overlay.style.display = 'none'; // Versteckt das Overlay
+        popup.classList.remove('show');
+    }
+
+    datumElements.forEach(element => {
+        element.addEventListener('click', showPopup);
+    });
+
+    closeButton.addEventListener('click', closePopup);
+    overlay.addEventListener('click', closePopup); // Erlaubt das Schließen des Popups durch Klicken auf den Overlay
+
+
+        </script>
+
+    <script src="js/time.js" defer></script>
+    <script src="js/diagram.js" defer></script>
+
+    <script src="js/calendar.js" defer></script>
+ </div>
 </body>
-
-
-<script src="js/script.js"></script>
-</html>

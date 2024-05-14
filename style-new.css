@@ -34,6 +34,103 @@ h1 {
       
 }
 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: sans-serif;
+  }
+
+  table {
+    width: 300px; /* Die Tabelle nimmt die volle Breite des Containers ein */
+    height: auto;
+  }
+
+  th, td {
+    width: calc(100% / 7); /* Teilt die Breite gleichmäßig auf 7 Tage auf */
+    height: 0;
+    text-align: center; /* Zentriert den Text innerhalb der Zellen */
+    box-sizing: border-box; /* Stellt sicher, dass das Padding die Größe der Zellen nicht beeinflusst */
+    position: relative; /* Ermöglicht das absolute Positionieren von Inhalten innerhalb der Zellen */
+  }
+  
+  .date-picked {
+    display: none  }
+  
+  #picked {
+    font-weight: normal;
+  }
+  
+  td {
+    cursor: pointer;
+    text-align: center;
+  }
+  td:hover {
+    background-color: #F2AF5E;
+    border-radius: 50%;
+  }
+  
+  main{
+    background-color: #F2D5B3;
+    width: 300px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  #calender-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #F2AF5E;
+    width: 300px;
+    color: black;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: 500;
+    text-transform: uppercase; 
+    padding: 10px 20px;
+    
+  }
+  
+  button{
+    border: none;
+    background-color: transparent;
+    color: black;
+    margin: 0 20px;
+  }
+  
+  .today{
+    background-color: #F2AF5E;
+    color: black;
+    border-radius: 50%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 .wrapper{
   width: 450px;
   background: #F2D5B3;

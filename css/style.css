@@ -1,13 +1,18 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
+
 
 body {
     background-color: #FAEEDD;
     color: #000000;
+    max-height: calc(100vh - 164px); /* 100vh ist 100% der Viewport-Höhe */
+    overflow: auto; /* Ermöglicht das Scrollen, wenn der Inhalt größer als der Viewport ist */
+    
 }
 
 
@@ -20,13 +25,18 @@ h2 {
 
 h3 {
     font-size: 24px;
-    margin-top: 10px;
+
     text-align: center;
     font-weight: normal;
     }
     
+  .times {
+      display: flex;
+      justify-content: space-evenly;
+    }
 
 .los-um {
+
     font-size: 12px;
      margin: 4px 0;    /* Geringer Abstand zwischen den Zeilen */
     }
@@ -39,7 +49,7 @@ h3 {
     width: 100%;             
 }
 
-_____
+
 
 div.inhalt {
     max-width: 768px;
@@ -169,88 +179,16 @@ h1 {
     background-color: #F2B05C; /* Dunklere Hintergrundfarbe beim Hover */
     cursor: pointer;
   }
-______________
+/*______________*/
 
-.calendar {
-    width: calc(100% - 60px);
-    max-width: 600px; /* Anpassen nach Bedarf */
-    margin: 0 30px;
-    background-color: #F2D5B3;
-    border-radius: 8px;
-    padding: 0;
-    text-align: center;
-    font-family: Arial, sans-serif;
+.seiteninhalt {
+ /*display: flex; */
+ flex-direction: column;
+  align-items: center;
+  padding: 20px 10px 0px 10px;
+  justify-content: space-evenly;
+  width: 100%;
 }
-
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    color: #F2D5B3;
-    background-color: #F2B05C;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-.arrow {
-    cursor: pointer;
-    user-select: none;
-    color: black;
-}
-
-.calendar-header h1 {
-    font-size: 24px;
-    margin: 0;
-}
-
-.weekdays {
-    display: flex;
-    justify-content: space-between;
-    color: black;
-    margin-bottom: 15px;
-}
-
-.weekdays div {
-    font-size: 16px;
-    font-weight: bold;
-    width: 14.28%; /* Gleichmäßige Aufteilung der Tage */
-}
-
-.days {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-}
-
-.days div {
-    width: 14.28%;
-    padding: 10px 0;
-    margin-bottom: 5px;
-    background-color: #F2D5B3;
-    cursor: pointer;
-    color: black;
-    transition: background-color 0.3s, border-radius 0.3s;
-}
-
-.days div:hover {
-    background-color: #F2B05C;
-    color: black;
-    border-radius: 50%;
-}
-
-.day, .prev-date, .next-date {
-    transition: background-color 0.3s;
-}
-
-.prev-date, .next-date {
-    color: rgb(64, 59, 59); /* Graue Farbe für Tage außerhalb des Monats */
-}
-
-.day[onclick] {
-    font-weight: bold; /* Hebt Tage hervor, die ausgewählt werden können */
-}
-
 
 
 .jahresansicht {
@@ -261,6 +199,30 @@ ______________
     margin-bottom: 10px;
     font-weight: normal;
 }
+
+#chartContainer {
+  width: 100%;     /* Nimmt die volle Breite des übergeordneten Elements ein */
+  max-width: 1200px; /* Maximalbreite, um das Diagramm nicht zu groß werden zu lassen */
+  height: auto;    /* Höhe wird auf Basis des Verhältnisses automatisch eingestellt */
+}
+
+#linienDiagramm {
+  width: 100%;     /* Nimmt die volle Breite des übergeordneten Elements ein */
+  max-width: 1200px; /* Maximalbreite, um das Diagramm nicht zu groß werden zu lassen */
+  height: auto;    /* Höhe wird auf Basis des Verhältnisses automatisch eingestellt */
+
+}
+
+.jahresverlauf {
+  width: auto;
+  max-width: 1200px; /* Maximalbreite, um das Diagramm nicht zu groß werden zu lassen */
+  height: 100%;   
+}
+
+
+
+
+
 
 .legende {
     text-align: center;
@@ -296,15 +258,138 @@ ______________
     background-color: #52688A;
 }
 
-.grafik-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+
+/* css von Kalender*/
+table {
+  width: 300px; /* Die Tabelle nimmt die volle Breite des Containers ein */
+  height: auto;
+}
+
+th, td {
+  width: calc(100% / 7); /* Teilt die Breite gleichmäßig auf 7 Tage auf */
+  height: auto;
+  text-align: center; /* Zentriert den Text innerhalb der Zellen */
+  box-sizing: border-box; /* Stellt sicher, dass das Padding die Größe der Zellen nicht beeinflusst */
+  position: relative; /* Ermöglicht das absolute Positionieren von Inhalten innerhalb der Zellen */
+}
+
+.date-picked {
+  display: block  }
+
+#picked {
+  font-weight: normal;
+}
+
+td {
+  cursor: pointer;
+  text-align: center;
+}
+td:hover {
+  background-color: #F2AF5E;
+  border-radius: 50%;
+}
+
+main.calendermain {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.calendermain {
+background-color: #F2D5B3;
+width: 300px;
+height: auto;
+overflow: hidden;
+border-radius: 10px;
+margin: 0;
+padding: 0;
+}
+
+#calender-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F2AF5E;
+  width: 300px;
+  color: black;
+  border-radius: 10px 10px 0px 0px;
+  font-weight: 500;
+  text-transform: uppercase; 
+  padding: 10px 20px;
+  
+}
+
+button{
+  border: none;
+  background-color: transparent;
+  color: black;
+  margin: 0 20px;
+  font-size: 30px;
+}
+
+.today{
+  background-color: #F2AF5E;
+  color: black;
+  border-radius: 50%;
 }
 
 
 
+
+
+
+
 /* Popup*/
+#popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Schwarz mit 40% Deckkraft */
+  z-index: 50; /* Stellen Sie sicher, dass dies unter dem Popup ist, aber über dem Hauptinhalt */
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100; /* Über dem Overlay */
+  background: #FAEEDD;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  min-width: 340px;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 48px;
+  font-weight: normal;
+}
+
+
+.show {
+  display: flex !important; /* Zeigt das Popup an */ 
+  flex-direction: column;
+  align-items: center;
+}
+
+
 
 
 @media (max-width: 768px) {

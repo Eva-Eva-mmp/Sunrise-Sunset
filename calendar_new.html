@@ -13,32 +13,36 @@
   </head>
   <body>
 
+<div id="popup">
     <div class="frage">   
       <h1> Wann möchtest du Laufen gehen?</h1> 
 </div>
 
 <div class="seiteninhalt">
-    <div class="wrapper">
-      <header>
-        <p class="current-date"></p>
-        <div class="icons">
-          <span id="prev" class="material-symbols-rounded">chevron_left</span>
-          <span id="next" class="material-symbols-rounded">chevron_right</span>
-        </div>
-      </header>
-      <div class="calendar">
-        <ul class="weeks">
-          <li>So</li>
-          <li>Mo</li>
-          <li>Di</li>
-          <li>Mi</li>
-          <li>Do</li>
-          <li>Fr</li>
-          <li>Sa</li>
-        </ul>
-        <ul class="days"></ul>
+    <p class="date-picked">Date Picked: <span id="picked"></span></p>
+    <main>
+      <div id="calender-header">
+        <button onclick="prevMonth()">&lt;</button>
+        <h3 id="month"></h3>
+        <button onclick="nextMonth()">&gt;</button>
       </div>
-    </div>
+      <table>
+        <thead>
+          <tr>
+            <th>So</th>
+            <th>Mo</th>
+            <th>Di</th>
+            <th>Mi</th>
+            <th>Do</th>
+            <th>Fr</th>
+            <th>Sa</th>
+          </tr>
+        </thead>
+        <tbody id="calendar">
+        </tbody>
+      </table>
+    </main>
+ </div>
 
 <div class="jahresverlauf">
     <h2 class="jahresansicht">Jahresverlauf</h2>
@@ -48,7 +52,11 @@
     </div>
 
 </div>
-    <script src="js/script.js" defer></script>
+<script src="js/diagram.js" defer></script>
+    <script src="js/calendar.js" defer></script>
+
 </div>  
+</div>
+
   </body>
 </html>
