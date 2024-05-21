@@ -66,7 +66,7 @@ h1 {
     color: black;
     text-align: center;
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-weight: normal;
  }
 
@@ -130,6 +130,7 @@ h1 {
     display: flex;
     margin: auto;
     max-width: 500px;
+    margin-top: 20px;
     min-width: auto; /* Passt die Breite an deine Bedürfnisse an */
     border-radius: 20px; /* Abrundung der Ecken */
     overflow: hidden; /* Verhindert, dass Inhalte außerhalb des Containers angezeigt werden */
@@ -179,13 +180,13 @@ h1 {
     background-color: #F2B05C; /* Dunklere Hintergrundfarbe beim Hover */
     cursor: pointer;
   }
-/*______________*/
+
 
 .seiteninhalt {
- /*display: flex; */
- flex-direction: column;
+  display: flex; 
+  flex-direction: column;
   align-items: center;
-  padding: 20px 10px 0px 10px;
+  padding: 10px 10px 0px 10px;
   justify-content: space-evenly;
   width: 100%;
 }
@@ -200,26 +201,20 @@ h1 {
     font-weight: normal;
 }
 
-#chartContainer {
-  width: 100%;     /* Nimmt die volle Breite des übergeordneten Elements ein */
-  max-width: 1200px; /* Maximalbreite, um das Diagramm nicht zu groß werden zu lassen */
-  height: auto;    /* Höhe wird auf Basis des Verhältnisses automatisch eingestellt */
+
+element.style {
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  height: auto;
 }
 
-#linienDiagramm {
-  width: 100%;     /* Nimmt die volle Breite des übergeordneten Elements ein */
-  max-width: 1200px; /* Maximalbreite, um das Diagramm nicht zu groß werden zu lassen */
-  height: auto;    /* Höhe wird auf Basis des Verhältnisses automatisch eingestellt */
-
+canvas#linienDiagramm {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 600px !important;
+  min-width: 340px !important;
 }
-
-.jahresverlauf {
-  width: auto;
-  max-width: 1200px; /* Maximalbreite, um das Diagramm nicht zu groß werden zu lassen */
-  height: 100%;   
-}
-
-
 
 
 
@@ -265,6 +260,7 @@ table {
   width: 300px; /* Die Tabelle nimmt die volle Breite des Containers ein */
   height: auto;
 }
+
 
 th, td {
   width: calc(100% / 7); /* Teilt die Breite gleichmäßig auf 7 Tage auf */
@@ -375,7 +371,7 @@ button{
 
 .close-btn {
   position: absolute;
-  top: 10px;
+  top: 0px;
   right: 20px;
   cursor: pointer;
   font-size: 48px;
